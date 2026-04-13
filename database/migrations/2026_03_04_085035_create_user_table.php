@@ -15,6 +15,9 @@ return new class extends Migration
              $table->uuid('id')->primary();
             $table->string('nama');
             $table->string('npm');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->string('role')->default('mahasiswa');
             $table->foreignId('kelas_id')->constrained('kelas');
             $table->timestamps();
         });
